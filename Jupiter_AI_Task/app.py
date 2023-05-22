@@ -3,15 +3,15 @@ import openai
 
 app = Flask(__name__)
 
-# Set up the OpenAI API credentials
-openai.api_key = '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'
+# Credentials
+openai.api_key = 'open-ai-key'
 
 @app.route('/', methods=['POST'])
 def process_query():
     data = request.get_json()
     query = data['query']
 
-    # Generate a response using ChatGPT
+    # Responses
     response = openai.Completion.create(
         engine='text-davinci-003',
         prompt=query,
