@@ -4,7 +4,7 @@ import streamlit as st
 from PIL import Image
 from tensorflow.keras.models import load_model
 import numpy as np
-model = load_model('ensemble.h5')
+model = load_model("Ensemble.h5")
 def preprocess_image(image):
     image = image.resize((224, 224)) 
     image = np.array(image)
