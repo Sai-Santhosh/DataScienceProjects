@@ -1,7 +1,11 @@
 
+import os
+print("Current Working Directory:", os.getcwd())
+print("Files in Directory:", os.listdir('.'))
+
 import streamlit as st
 from PIL import Image
-from keras.models import load_model
+from tensorflow.keras.models import load_model
 import numpy as np
 model = load_model('Ensemble.h5')
 def preprocess_image(image):
