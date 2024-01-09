@@ -6,7 +6,7 @@ from tensorflow.keras.models import load_model
 import numpy as np
 import requests
 
-model_url = 'https://github.com/Sai-Santhosh/DataScienceProjects/blob/72f50431e957b325301393fc39b614d61bff50e0/Healthcare_AI_Deep_Learning_Projects/MultiCancerDetection/LymphomaFinal/Ensemble.h5'
+model_url = 'https://github.com/Sai-Santhosh/DataScienceProjects/raw/main/Healthcare_AI_Deep_Learning_Projects/MultiCancerDetection/LymphomaFinal/Ensemble.h5'
 
 # Download the file
 r = requests.get(model_url)
