@@ -15,7 +15,7 @@ with open('Ensemble.h5', 'wb') as f:
 
 # Now you can load your model
 model = load_model('Ensemble.h5')
-model = load_model("Ensemble.h5")
+
 def preprocess_image(image):
     image = image.resize((224, 224)) 
     image = np.array(image)
