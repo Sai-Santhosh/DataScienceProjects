@@ -2,7 +2,7 @@ from torch.nn import Conv2d, ReLU, Sequential, Softmax, Upsample, BatchNorm2d, C
 from color_code import ColorCode
 
 class RCNN(ColorCode):
-    def __init__(self, norm_layer=BatchNorm2d):
+    def __init__(self, pretrained=False, norm_layer=BatchNorm2d):
         super(RCNN, self).__init__()
 
         model1=[Conv2d(1, 64, kernel_size=3, stride=1, padding=1, bias=True),]
