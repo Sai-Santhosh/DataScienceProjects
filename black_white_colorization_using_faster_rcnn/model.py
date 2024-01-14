@@ -1,3 +1,4 @@
+import torch
 from torch.nn import Conv2d, ReLU, Sequential, Softmax, Upsample, BatchNorm2d, ConvTranspose2d
 from color_code import ColorCode
 
