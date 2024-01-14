@@ -92,9 +92,8 @@ class RCNN(ColorCode):
 
         return self.unnormalize_ab(self.upsample4(out_reg))
 
-def rcnn(pretrained=True):
-	model = RCNN()
-	if(pretrained):
-		import torch.utils.model_zoo as model_zoo
-		model.load_state_dict(model_zoo.load_url('https://colorizers.s3.us-east-2.amazonaws.com/colorization_release_v2-9b330a0b.pth',map_location='cpu',check_hash=True))
-	return model
+def load_model_from_github():
+    model_url = 'https://github.com/Sai-Santhosh/DataScienceProjects/raw/main/black_white_colorization_using_faster_rcnn/colorization_release_v2-9b330a0b.pth'
+    model = RCNN(pretrained=False)
+    model.load_state_dict(torch.load(model_url, map_location='cpu'))
+    return model
