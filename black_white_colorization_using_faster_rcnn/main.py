@@ -1,12 +1,19 @@
 import cv2 
-from model import load_model_from_github
+from model import RCNN
 from util import preprocess_img, postprocess_tens
 import streamlit as st 
 import torch
 
+def load_model_from_github():
+    model_url = 'https://github.com/Sai-Santhosh/DataScienceProjects/raw/main/black_white_colorization_using_faster_rcnn/colorization_release_v2-9b330a0b.pth'
+    model = RCNN(pretrained=False)  # Load the model without pretrained weights
+    model.load_state_dict(torch.hub.load_state_dict_from_url(model_url, map_location='cpu', progress=False))
+    return model
+
+# Load the model
 colorizer_rcnn = load_model_from_github().eval()
 use_gpu = False
-if(use_gpu):
+if use_gpu:
     colorizer_rcnn.cuda()
 
 st.title('Video Colorization')
