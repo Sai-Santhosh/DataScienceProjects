@@ -1,13 +1,14 @@
 import cv2 
-from model import rcnn
+from model import load_model_from_github
 from util import preprocess_img, postprocess_tens
 import streamlit as st 
+import torch
 
-colorizer_rcnn = rcnn(pretrained=True).eval()
+colorizer_rcnn = load_model_from_github().eval()
 use_gpu = False
 if(use_gpu):
     colorizer_rcnn.cuda()
-    
+
 st.title('Video Colorization')
 
 def main():
@@ -22,14 +23,13 @@ def main():
         cv2.namedWindow("Resized_Window", cv2.WINDOW_NORMAL)
         cv2.resizeWindow("Resized_Window", 800, 600)
 
-
         while True:
             ret, img = cap.read()
             if not ret:
                 st.warning('Completed Successfully')
                 break
             
-            (tens_l_orig, tens_l_rs) = preprocess_img(img, HW=(256,256))
+            (tens_l_orig, tens_l_rs) = preprocess_img(img, HW=(256, 256))
             
             output_img = postprocess_tens(tens_l_orig, colorizer_rcnn(tens_l_rs).cpu())
 
@@ -37,7 +37,5 @@ def main():
             if cv2.waitKey(1) & 0xff == ord('q'):
                 break
             
-            
-            
-if __name__=='__main__':
+if __name__ == '__main__':
     main()
