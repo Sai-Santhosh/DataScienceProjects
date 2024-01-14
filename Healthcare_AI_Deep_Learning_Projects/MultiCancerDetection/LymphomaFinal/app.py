@@ -1,9 +1,21 @@
 
+import os
 import streamlit as st
 from PIL import Image
-from keras.models import load_model
+from tensorflow.keras.models import load_model
 import numpy as np
+import requests
+
+model_url = 'https://github.com/Sai-Santhosh/DataScienceProjects/raw/main/Healthcare_AI_Deep_Learning_Projects/MultiCancerDetection/LymphomaFinal/Ensemble.h5'
+
+# Download the file
+r = requests.get(model_url)
+with open('Ensemble.h5', 'wb') as f:
+    f.write(r.content)
+
+# Now you can load your model
 model = load_model('Ensemble.h5')
+
 def preprocess_image(image):
     image = image.resize((224, 224)) 
     image = np.array(image)
