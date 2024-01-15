@@ -52,15 +52,20 @@ def show_prediction():
 def show_accuracy_graphs():
     st.header("Accuracy Graphs")
 
-    # Define the path for each graph
-    graph1 = 'Accuracy.png'
-    graph2 = 'Loss.png'
-    graph3 = 'confmatrix.png'
+    # URLs for the graphs
+    graph_urls = {
+        'Accuracy': 'https://github.com/Sai-Santhosh/DataScienceProjects/raw/main/Healthcare_AI_Deep_Learning_Projects/MultiCancerDetection/LymphomaFinal/Accuracy.png',
+        'Loss': 'https://github.com/Sai-Santhosh/DataScienceProjects/raw/main/Healthcare_AI_Deep_Learning_Projects/MultiCancerDetection/LymphomaFinal/Loss.png',
+        'Confusion Matrix': 'https://github.com/Sai-Santhosh/DataScienceProjects/raw/main/Healthcare_AI_Deep_Learning_Projects/MultiCancerDetection/LymphomaFinal/confmatrix.png'
+    }
 
-    # Display each image with the same fixed width
-    st.image(graph1, caption='Training and Validation Accuracy', width=300)  
-    st.image(graph2, caption='Training and Validation Loss', width=300)  
-    st.image(graph3, caption='Confusion Matrix', width=300)  
+    for graph_name, graph_url in graph_urls.items():
+        # Download the image
+        response = requests.get(graph_url)
+        image = Image.open(BytesIO(response.content))
+
+        # Display the image
+        st.image(image, caption=graph_name, use_column_width=True)
     
 
 # Function to check if the user is logged in
