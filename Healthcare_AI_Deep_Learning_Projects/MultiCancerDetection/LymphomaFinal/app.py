@@ -4,6 +4,7 @@ import streamlit as st
 from PIL import Image
 from tensorflow.keras.models import load_model
 import numpy as np
+from io import BytesIO
 import requests
 
 model_url = 'https://github.com/Sai-Santhosh/DataScienceProjects/raw/main/Healthcare_AI_Deep_Learning_Projects/MultiCancerDetection/LymphomaFinal/Ensemble.h5'
