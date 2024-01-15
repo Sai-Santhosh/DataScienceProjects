@@ -5,8 +5,8 @@ import joblib
 from tensorflow.keras.models import load_model
 import requests
 
-model_url = 'https://github.com/Sai-Santhosh/DataScienceProjects/tree/main/crop_yield/lstm_crop_yield.h5'
-transformer_url = 'https://github.com/Sai-Santhosh/DataScienceProjects/tree/main/crop_yield/power_transformer_yeojohnson.pkl' 
+model_url = 'https://github.com/Sai-Santhosh/DataScienceProjects/raw/main/crop_yield/lstm_crop_yield.h5'
+transformer_url = 'https://github.com/Sai-Santhosh/DataScienceProjects/raw/main/crop_yield/power_transformer_yeojohnson.pkl' 
 
 # Download the file
 r = requests.get(model_url)
