@@ -54,9 +54,9 @@ def show_accuracy_graphs():
 
     # URLs for the graphs
     graph_urls = {
-        'Accuracy': 'https://github.com/Sai-Santhosh/DataScienceProjects/raw/main/Healthcare_AI_Deep_Learning_Projects/MultiCancerDetection/LymphomaFinal/Accuracy.png',
-        'Loss': 'https://github.com/Sai-Santhosh/DataScienceProjects/raw/main/Healthcare_AI_Deep_Learning_Projects/MultiCancerDetection/LymphomaFinal/Loss.png',
-        'Confusion Matrix': 'https://github.com/Sai-Santhosh/DataScienceProjects/raw/main/Healthcare_AI_Deep_Learning_Projects/MultiCancerDetection/LymphomaFinal/confmatrix.png'
+        'Accuracy': 'https://github.com/Sai-Santhosh/DataScienceProjects/tree/main/Healthcare_AI_Deep_Learning_Projects/MultiCancerDetection/LymphomaFinal/Accuracy.png',
+        'Loss': 'https://github.com/Sai-Santhosh/DataScienceProjects/tree/main/Healthcare_AI_Deep_Learning_Projects/MultiCancerDetection/LymphomaFinal/Loss.png',
+        'Confusion Matrix': 'https://github.com/Sai-Santhosh/DataScienceProjects/tree/main/Healthcare_AI_Deep_Learning_Projects/MultiCancerDetection/LymphomaFinal/confmatrix.png'
     }
 
     for graph_name, graph_url in graph_urls.items():
