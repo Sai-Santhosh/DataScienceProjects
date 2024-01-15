@@ -10,7 +10,7 @@ transformer_url = 'https://github.com/Sai-Santhosh/DataScienceProjects/tree/main
 
 # Download the file
 r = requests.get(model_url)
-with open('Ensemble.h5', 'wb') as f:
+with open('lstm_crop_yield.h5', 'wb') as f:
     f.write(r.content)
 
 # Power Transformer Download the file
