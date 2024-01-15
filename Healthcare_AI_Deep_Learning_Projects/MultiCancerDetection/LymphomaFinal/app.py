@@ -64,22 +64,22 @@ def show_accuracy_graphs():
     
 
 # Function to check if the user is logged in
-def is_user_logged_in():
-    return 'logged_in' in st.session_state and st.session_state.logged_in
+# def is_user_logged_in():
+#     return 'logged_in' in st.session_state and st.session_state.logged_in
 
-# Function to display the login form
-def login_form():
-    st.title("Lymphoma Classification System")
-    form = st.form(key='login_form')
-    username = form.text_input("Username")
-    password = form.text_input("Password", type="password")
-    login_button = form.form_submit_button("Login")
-    if login_button:
-        if username == "admin" and password == "password":  
-            st.session_state.logged_in = True
-            st.experimental_rerun()
-        else:
-            st.error("Incorrect Username/Password")
+# # Function to display the login form
+# def login_form():
+#     st.title("Lymphoma Classification System")
+#     form = st.form(key='login_form')
+#     username = form.text_input("Username")
+#     password = form.text_input("Password", type="password")
+#     login_button = form.form_submit_button("Login")
+#     if login_button:
+#         if username == "admin" and password == "password":  
+#             st.session_state.logged_in = True
+#             st.experimental_rerun()
+#         else:
+#             st.error("Incorrect Username/Password")
 
 # Main app
 def main_app():
@@ -94,10 +94,10 @@ def main_app():
         show_accuracy_graphs()
 
 # Main
-if 'logged_in' not in st.session_state:
-    st.session_state.logged_in = False
+# if 'logged_in' not in st.session_state:
+#     st.session_state.logged_in = False
 
-if is_user_logged_in():
-    main_app()
-else:
-    login_form()
+# if is_user_logged_in():
+#     main_app()
+# else:
+#     login_form()
