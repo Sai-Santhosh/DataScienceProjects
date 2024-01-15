@@ -5,3 +5,4 @@ pillow
 numpy
 scikit-learn
 requests
+h5py
