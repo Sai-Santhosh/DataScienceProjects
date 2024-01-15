@@ -64,8 +64,8 @@ def show_accuracy_graphs():
     
 
 # Function to check if the user is logged in
-# def is_user_logged_in():
-#     return 'logged_in' in st.session_state and st.session_state.logged_in
+def is_user_logged_in():
+    return 'logged_in' in st.session_state and st.session_state.logged_in
 
 # # Function to display the login form
 def login_form():
