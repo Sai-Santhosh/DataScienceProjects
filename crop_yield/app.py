@@ -3,6 +3,20 @@ import numpy as np
 import pandas as pd
 import joblib
 from keras.models import load_model
+import requests
+
+model_url = 'https://github.com/Sai-Santhosh/DataScienceProjects/tree/main/crop_yield/lstm_crop_yield.h5'
+transformer_url = 'https://github.com/Sai-Santhosh/DataScienceProjects/tree/main/crop_yield/power_transformer_yeojohnson.pkl' 
+
+# Download the file
+r = requests.get(model_url)
+with open('Ensemble.h5', 'wb') as f:
+    f.write(r.content)
+
+# Power Transformer Download the file
+r = requests.get(transformer_url)
+with open('power_transformer_yeojohnson.pkl', 'wb') as f:
+    f.write(r.content)
 
 # Load the saved LSTM model and PowerTransformer
 model = load_model('lstm_crop_yield.h5')
