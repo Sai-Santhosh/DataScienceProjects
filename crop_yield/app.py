@@ -2,7 +2,7 @@ import streamlit as st
 import numpy as np
 import pandas as pd
 import joblib
-from keras.models import load_model
+from tensorflow.keras.models import load_model
 import requests
 
 model_url = 'https://github.com/Sai-Santhosh/DataScienceProjects/tree/main/crop_yield/lstm_crop_yield.h5'
