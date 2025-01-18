@@ -101,7 +101,7 @@ A deep learning project to classify seismic data into categories such as salt, f
 
 ## 📊 Results
 
-| Metric               | Custom CNN | Pre-trained VGG16 |
+| Metric               | Custom CNN | Custom VGG16 |
 |-----------------------|------------|--------------------|
 | **Training Accuracy** | 50%        | 89%               |
 | **Validation Accuracy** | 40%        | 78%               |
